@@ -12,3 +12,5 @@ github_username:  archer811
 
 # Build settings
 markdown: kramdown
+paginate: 10  
+paginate_path: "page:num"
