@@ -2,7 +2,7 @@
 layout : mylayout
 title : hello world
 ---
-
+<!--
 <ul class="posts">
 {% for post in site.posts %}
   <li><span>{{ post.date | date_to_string }}</span> &raquo;
@@ -10,7 +10,9 @@ title : hello world
   </li>
 {% endfor %}
 </ul>
+-->
 
 
 {% include JB/setup %}
 {% include themes/index.html %}
+{% include footer.html %}
