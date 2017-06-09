@@ -1,4 +1,4 @@
----
+ï»¿---
 layout:     post
 title:      "open a new life"
 subtitle:   " \"Hello , i'm here\""
@@ -7,15 +7,13 @@ author:     "Zhouxj"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - Éú»î
+    - ç”Ÿæ´»
 ---
-## Ç°ÑÔ
+## å‰è¨€
 
-[Ìø¹ı·Ï»°£¬Ö±½Ó¿´¼¼ÊõÊµÏÖ ](#build) 
 
-¾ö¶¨ÔÚÕâ¸ö²©¿Í¼á³ÖĞ´ÎÄÕÂ
 
-×öµãÊÂÇé£¬¿ªÆôĞÂµÄÉú»îÆªÕÂ¡£
+hello,i'm here
 <audio src="http://www.xiami.com/widget/0_3515679/singlePlayer.swf" controls="controls">
 Your browser does not support the audio tag.
 </audio>
