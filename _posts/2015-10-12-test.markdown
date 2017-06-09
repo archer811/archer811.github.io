@@ -1,0 +1,7 @@
+---
+layout : mylayout
+title : test
+tag : test
+Archive : a
+---
+hahaha
