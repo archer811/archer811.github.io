@@ -1,4 +1,0 @@
-﻿---
-layout:post
-title:"Hello 2015"
----
