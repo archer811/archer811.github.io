@@ -1,6 +1,6 @@
 # Site settings
-title: Hux Blog
-SEOTitle: 周筱婕 | Hux Blog
+title: Zhouxj Blog
+SEOTitle: 周筱婕 | Zhouxj Blog
 header-img: img/home-bg.jpg
 email: zhouxj327@gmail.com
 description: "。"
@@ -12,10 +12,10 @@ baseurl: ""                             # for example, '/blog' if your blog host
 
 # SNS settings
 RSS: false
-weibo_username:     huxpro
-zhihu_username:     huxpro
-github_username:    huxpro
-twitter_username:   huxpro
+weibo_username:     Zhouxj
+zhihu_username:     Zhouxj
+github_username:    archer811
+twitter_username:   Zhouxj
 #facebook_username:  huxpro
 # linkedin_username:  firstname-lastname-idxxxx
 
