@@ -35,7 +35,6 @@ apache sentry 目前有1.7的发布版，1.7之前的都是孵化版。从1.5开
 加入以下参数：
 <div>
 </div>
-
     <property>
     	<name>sentry.service.server.rpc-port</name>
     	<value>8038</value>
@@ -96,7 +95,6 @@ apache sentry 目前有1.7的发布版，1.7之前的都是孵化版。从1.5开
         <name>sentry.hive.testing.mode</name>
         <value>true</value>
     </property>
-
 <div>
 </div>
 初始化sentry的mysql数据库。<br>
@@ -104,6 +102,8 @@ apache sentry 目前有1.7的发布版，1.7之前的都是孵化版。从1.5开
 ```sudo sh  /usr/lib/sentry/bin/sentry --log4jConf /etc/sentry/conf/sentry-log4j.properties  --command service --conffile /etc/sentry/conf/sentry-site.xml > ~/sentry.pid 2>&1 &```
 
 - 2，hive的安装目录/usr/lib/sentry/conf，添加sentry-site.xml，这是sentry的客户端配置。
+<div>
+</div>
     <property>
        <name>sentry.service.client.server.rpc-port</name>
        <value>8038</value>
@@ -136,7 +136,11 @@ apache sentry 目前有1.7的发布版，1.7之前的都是孵化版。从1.5开
        <name>sentry.service.server.principal</name>
         <value>----</value>
     </property>
+<div>
+</div>
 - 3，修改hive的配置文件hive-site.xml，hive加入sentry插件。
+<div>
+</div>
     <property>
         <name>hive.metastore.pre.event.listeners</name>
         <value>org.apache.sentry.binding.metastore.MetastoreAuthzBinding</value>
@@ -164,3 +168,5 @@ apache sentry 目前有1.7的发布版，1.7之前的都是孵化版。从1.5开
             <name>hive.server2.session.hook</name>
             <value>org.apache.sentry.binding.hive.HiveAuthzBindingSessionHook</value>
      </property>
+<div>
+</div>
