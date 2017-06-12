@@ -13,7 +13,7 @@ tags:
 我们看一下在hive-site里面配置了什么参数，从参数入手，来看sentry部分的代码。<br>
 ### 1，	metastore的插件
 <div>
-</di>
+</div>
 <property>
     <name>hive.metastore.pre.event.listeners</name>
     <value>org.apache.sentry.binding.metastore.MetastoreAuthzBinding</value>
