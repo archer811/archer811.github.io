@@ -34,12 +34,12 @@ apache sentry 目前有1.7的发布版，1.7之前的都是孵化版。从1.5开
 - 1，在sentry的安装目录/usr/lib/sentry/conf，添加sentry-site.xml，sentry服务启动需要的配置项。
 加入以下参数：
     <property>
-       <name>sentry.service.server.rpc-port</name>
-       <value>8038</value>
+        <name>sentry.service.server.rpc-port</name>
+        <value>8038</value>
     </property>
     <property>
-       <name>sentry.service.server.rpc-address</name>
-       <value>*****</value>
+        <name>sentry.service.server.rpc-address</name>
+        <value>*****</value>
     </property>
     <property>
        <name>sentry.service.server.rpc-connection-timeout</name>
@@ -66,20 +66,20 @@ apache sentry 目前有1.7的发布版，1.7之前的都是孵化版。从1.5开
         <value>admin,sentry,op,hive</value>
     </property>
     <property>
-            <name>sentry.store.jdbc.url</name>
-            <value>*****</value>
+        <name>sentry.store.jdbc.url</name>
+        <value>*****</value>
     </property>
     <property>
-            <name>sentry.store.jdbc.driver</name>
-            <value>com.mysql.jdbc.Driver</value>
+        <name>sentry.store.jdbc.driver</name>
+        <value>com.mysql.jdbc.Driver</value>
     </property>
     <property>
-            <name>sentry.store.jdbc.user</name>
-            <value>*****</value>
+        <name>sentry.store.jdbc.user</name>
+        <value>*****</value>
     </property>
     <property>
-            <name>sentry.store.jdbc.password</name>
-            <value>*****</value>
+        <name>sentry.store.jdbc.password</name>
+        <value>*****</value>
     </property>
     <property>
         <name>sentry.hive.provider.backend</name>
