@@ -7,7 +7,8 @@ author:     "Zhouxj"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 编程
+    - sentry
+    - hive
 ---
 
 apache sentry 目前有1.7的发布版，1.7之前的都是孵化版。从1.5开始就加入了列权限。
@@ -32,13 +33,14 @@ apache sentry 目前有1.7的发布版，1.7之前的都是孵化版。从1.5开
 有3个地方需要增加/修改配置
 - 1，在sentry的安装目录/usr/lib/sentry/conf，添加sentry-site.xml，sentry服务启动需要的配置项。
 加入以下参数：
+<pre><code>
    <property>
        <name>sentry.service.server.rpc-port</name>
        <value>8038</value>
     </property>
     <property>
        <name>sentry.service.server.rpc-address</name>
-       <value>----</value>
+       <value>*****</value>
     </property>
     <property>
        <name>sentry.service.server.rpc-connection-timeout</name>
@@ -50,7 +52,7 @@ apache sentry 目前有1.7的发布版，1.7之前的都是孵化版。从1.5开
     </property>
     <property>
        <name>sentry.service.server.principal</name>
-        <value>-----</value>
+       <value>*****</value>
     </property>
     <property>
         <name>sentry.service.server.keytab</name>
@@ -66,7 +68,7 @@ apache sentry 目前有1.7的发布版，1.7之前的都是孵化版。从1.5开
     </property>
     <property>
             <name>sentry.store.jdbc.url</name>
-            <value>----</value>
+            <value>*****</value>
     </property>
     <property>
             <name>sentry.store.jdbc.driver</name>
@@ -74,11 +76,11 @@ apache sentry 目前有1.7的发布版，1.7之前的都是孵化版。从1.5开
     </property>
     <property>
             <name>sentry.store.jdbc.user</name>
-            <value>-----</value>
+            <value>*****</value>
     </property>
     <property>
             <name>sentry.store.jdbc.password</name>
-            <value>----</value>
+            <value>*****</value>
     </property>
     <property>
         <name>sentry.hive.provider.backend</name>
@@ -92,6 +94,7 @@ apache sentry 目前有1.7的发布版，1.7之前的都是孵化版。从1.5开
         <name>sentry.hive.testing.mode</name>
         <value>true</value>
      </property>
+</code></pre>
 初始化sentry的mysql数据库。
 sentry --command schema-tool --conffile /etc/sentry/conf/sentry-site.xml --dbType mysql –initSchema
 sudo sh  /usr/lib/sentry/bin/sentry --log4jConf /etc/sentry/conf/sentry-log4j.properties  --command service --conffile /etc/sentry/conf/sentry-site.xml > ~/sentry.pid 2>&1 &
