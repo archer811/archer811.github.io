@@ -1,6 +1,6 @@
 ---
 layout: post
-title:      "apache sentry的安装"
+title:      "apache sentry源码研究"
 subtitle:   "Sentry Code Parsing"
 date:       2017-06-12 18:00:00
 author:     "Zhouxj"
