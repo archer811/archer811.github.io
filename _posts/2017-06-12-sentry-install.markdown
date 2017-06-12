@@ -37,6 +37,7 @@ apache sentry 目前有1.7的发布版，1.7之前的都是孵化版。从1.5开
         <name>sentry.service.server.rpc-port</name>
         <value>8038</value>
     </property>
+    
     <property>
         <name>sentry.service.server.rpc-address</name>
         <value>*****</value>
