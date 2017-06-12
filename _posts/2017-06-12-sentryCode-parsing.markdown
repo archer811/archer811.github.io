@@ -14,16 +14,16 @@ tags:
 ### 1，	metastore的插件
 <div>
 </div>
-<property>
-    <name>hive.metastore.pre.event.listeners</name>
-    <value>org.apache.sentry.binding.metastore.MetastoreAuthzBinding</value>
-    <description>list of comma separated listeners for metastore events.</description>
-</property>
-<property>
-    <name>hive.metastore.event.listeners</name>
-    <value>org.apache.sentry.binding.metastore.SentryMetastorePostEventListener</value>
-    <description>list of comma separated listeners for metastore, post events.</description>
-</property>
+    <property>
+        <name>hive.metastore.pre.event.listeners</name>
+        <value>org.apache.sentry.binding.metastore.MetastoreAuthzBinding</value>
+        <description>list of comma separated listeners for metastore events.</description>
+    </property>
+    <property>
+        <name>hive.metastore.event.listeners</name>
+        <value>org.apache.sentry.binding.metastore.SentryMetastorePostEventListener</value>
+        <description>list of comma separated listeners for metastore, post events.</description>
+    </property>
 <div>
 </div>
 就是hiveserver2/cli 调用metastore，如果metastore执行的时候触发events，调用插件。这部分代码比较简单，先跳过。
@@ -35,10 +35,10 @@ SentryMetastorePostEventListener做的事情: 如果涉及到路径（比如crea
 ### 2，task.factory
 <div>
 </div>
-<property>
-   <name>hive.security.authorization.task.factory</name>
-   <value>org.apache.sentry.binding.hive.SentryHiveAuthorizationTaskFactoryImpl</value>
-</property>
+    <property>
+       <name>hive.security.authorization.task.factory</name>
+       <value>org.apache.sentry.binding.hive.SentryHiveAuthorizationTaskFactoryImpl</value>
+    </property>
 <div>
 </div>
 具体实现以下task
@@ -50,10 +50,10 @@ SentryMetastorePostEventListener做的事情: 如果涉及到路径（比如crea
 ### 3，session.hook
 <div>
 </div>
-<property>
+    <property>
         <name>hive.server2.session.hook</name>
         <value>org.apache.sentry.binding.hive.HiveAuthzBindingSessionHook</value>
-</property>
+    </property>
 <div>
 </div>
 Hive的源码里session执行过程中调用sessionhook的run方法。
@@ -83,11 +83,11 @@ authorizeWithHiveBindings(context, stmtAuthObject, stmtOperation);
 ### 4，client.impl
 <div>
 </div>
-<property>
-    <name>hive.metastore.client.impl</name>
-    <value>org.apache.sentry.binding.metastore.SentryHiveMetaStoreClient</value>
-    <description>Sets custom Hive metastore client which Sentry uses to filter out metadata.</description>
-</property>
+    <property>
+        <name>hive.metastore.client.impl</name>
+        <value>org.apache.sentry.binding.metastore.SentryHiveMetaStoreClient</value>
+        <description>Sets custom Hive metastore client which Sentry uses to filter out metadata.</description>
+    </property>
 <div>
 </div>
 生成authorizerV2的时候用到
