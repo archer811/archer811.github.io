@@ -7,7 +7,7 @@ author:     "Zhouxj"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - sentry
+    - 编程
 ---
 
 apache sentry 目前有1.7的发布版，1.7之前的都是孵化版。从1.5开始就加入了列权限。
