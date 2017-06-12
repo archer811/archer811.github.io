@@ -38,6 +38,11 @@ apache sentry 目前有1.7的发布版，1.7之前的都是孵化版。从1.5开
     	<value>8038</value>
     </property>
 
+    <div class="footer">
+        &copy; 2004 Foo Corporation
+    </div>
+啊啊啊啊啊啊啊
+
     <property>
         <name>sentry.service.server.rpc-address</name>
         <value>*****</value>
