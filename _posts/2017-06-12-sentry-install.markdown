@@ -33,8 +33,7 @@ apache sentry 目前有1.7的发布版，1.7之前的都是孵化版。从1.5开
 有3个地方需要增加/修改配置
 - 1，在sentry的安装目录/usr/lib/sentry/conf，添加sentry-site.xml，sentry服务启动需要的配置项。
 加入以下参数：
-<pre><code>
-   <property>
+    <property>
        <name>sentry.service.server.rpc-port</name>
        <value>8038</value>
     </property>
@@ -93,8 +92,7 @@ apache sentry 目前有1.7的发布版，1.7之前的都是孵化版。从1.5开
     <property>
         <name>sentry.hive.testing.mode</name>
         <value>true</value>
-     </property>
-</code></pre>
+    </property>
 初始化sentry的mysql数据库。
 sentry --command schema-tool --conffile /etc/sentry/conf/sentry-site.xml --dbType mysql –initSchema
 sudo sh  /usr/lib/sentry/bin/sentry --log4jConf /etc/sentry/conf/sentry-log4j.properties  --command service --conffile /etc/sentry/conf/sentry-site.xml > ~/sentry.pid 2>&1 &
