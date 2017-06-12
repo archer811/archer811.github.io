@@ -11,6 +11,7 @@ tags:
     - hive
 ---
 我们看一下在hive-site里面配置了什么参数，从参数入手，来看sentry部分的代码。<br>
+
 ### 1，	metastore的插件
 <div>
 </div>
@@ -32,6 +33,7 @@ MetastoreAuthzBinding处理的event:
 具体的过程是inputHierarchy,outputHierarchy，给相应的event增加相应的输入层次机构，输出层次结构，inputPrivileges,outputPrivileges，输入/输出的权限，并进行权限认证。
 SentryMetastorePostEventListener做的事情: 如果涉及到路径（比如create table，table的hdfs地址），检查路径的权限。然后连存sentry的数据库加/减数据，新建一个 HiveMetaStoreClient，
 发送thrift rpc请求进行操作。
+
 ### 2，task.factory
 <div>
 </div>
@@ -47,6 +49,7 @@ SentryMetastorePostEventListener做的事情: 如果涉及到路径（比如crea
 在语法hook的postAnaylse，对task进行参数的设置。
 当hive执行task的时候，就调用SentryFilterDDLTask，SentryGrantRevokeTask的execute方法了。
 <img src="//archer811.github.io/img/post-sentrycode-parsing-3.png"  width="680" alt="sentry code"/>
+
 ### 3，session.hook
 <div>
 </div>
@@ -80,6 +83,7 @@ authorizeWithHiveBindings(context, stmtAuthObject, stmtOperation);
 需要的权限都存在HiveAuthzPrivilegesMap.java里
 例如drop table 需要Db的ALL:
 <img src="//archer811.github.io/img/post-sentrycode-parsing-7.png"  width="680" alt="sentry code"/>
+
 ### 4，client.impl
 <div>
 </div>
