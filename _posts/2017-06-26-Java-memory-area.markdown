@@ -6,6 +6,7 @@ date:       2017-06-26 10:00:00
 author:     "Zhouxj"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
+comments: true
 tags:
     - java
     - jvm
