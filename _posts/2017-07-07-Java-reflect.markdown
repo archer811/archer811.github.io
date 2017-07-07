@@ -29,7 +29,7 @@ Java反射框架主要提供以下功能：
 
 #### 1 获得class
 
-*  使用Class类的forName静态方法
+*  1.使用Class类的forName静态方法
 ```
 public static Class<?> forName(String className)
 比如Class.forName("org.apache.storm.task.ShellBolt");
@@ -45,14 +45,14 @@ Object result = method.invoke(obj,1,4);// 这里的obj一定要是实例
 ```
 
 
-*  直接获取某个对象的class
+*  2.直接获取某个对象的class
 
 ```
 Class<?> klass = int.class;
 Class<?> classInt = Integer.TYPE;
 ```
 
-*  调用某个对象的getClass()方法
+*  3.调用某个对象的getClass()方法
 
 ```
 StringBuilder str = new StringBuilder("123");
@@ -70,18 +70,18 @@ System.out.println(A.class.isInstance(a)); // true
 
 ### 在运行时构造任意一个类的对象
 
-​:smile:   **这里很重要一点**
+:smile: **这里很重要一点**
 
 Class和实例的区别：Class可以理解成就是二进制代码。实例是真实对象。
 
 通过反射来生成对象主要有两种方式
 
-1）使用Class对象的newInstance()方法来创建Class对象对应类的实例
+* 1.使用Class对象的newInstance()方法来创建Class对象对应类的实例
 ```
 Class<?> c = String.class;
 Object str = c.newInstance();
 ```
-2）先通过Class对象获取指定的Constructor对象，再调用Constructor对象的newInstance()方法来创建实例。这种方法可以用指定的构造器构造类的实例
+* 2.先通过Class对象获取指定的Constructor对象，再调用Constructor对象的newInstance()方法来创建实例。这种方法可以用指定的构造器构造类的实例
 ```
 //获取String所对应的Class对象
 Class<?> c = String.class;
@@ -131,5 +131,5 @@ public Object invoke(Object obj, Object... args)
 ```
 
 ### 总结
-** 由于反射会额外消耗一定的系统资源，因此如果不需要动态地创建一个对象，那么就不需要用反射 ** <br>
-** 另外，反射调用方法时可以忽略权限检查，因此可能会破坏封装性而导致安全问题 **
+**由于反射会额外消耗一定的系统资源，因此如果不需要动态地创建一个对象，那么就不需要用反射** <br>
+**另外，反射调用方法时可以忽略权限检查，因此可能会破坏封装性而导致安全问题**
