@@ -25,11 +25,11 @@ Java反射框架主要提供以下功能：
 - 3.在运行时判断任意一个类所具有的成员变量和方法（通过反射甚至可以调用private方法）；
 - 4.在运行时调用任意一个对象的方法
 
-###在运行时判断任意一个对象所属的类
+### 在运行时判断任意一个对象所属的类
 
-1，获得class
+#### 1 获得class
 
-1）使用Class类的forName静态方法
+*  使用Class类的forName静态方法
 ```
 public static Class<?> forName(String className)
 比如Class.forName("org.apache.storm.task.ShellBolt");
@@ -45,20 +45,20 @@ Object result = method.invoke(obj,1,4);// 这里的obj一定要是实例
 ```
 
 
-2）直接获取某个对象的class
+*  直接获取某个对象的class
 
 ```
 Class<?> klass = int.class;
 Class<?> classInt = Integer.TYPE;
 ```
 
-3）调用某个对象的getClass()方法
+*  调用某个对象的getClass()方法
 
 ```
 StringBuilder str = new StringBuilder("123");
 Class<?> klass = str.getClass();
 ```
-2，判断是否为某个类的实例
+#### 2 判断是否为某个类的实例
 ```
 A a = null;
 System.out.println(a instanceof A); // false
@@ -68,7 +68,7 @@ System.out.println(a instanceof A); // true
 System.out.println(A.class.isInstance(a)); // true
 ```
 
-###在运行时构造任意一个类的对象
+### 在运行时构造任意一个类的对象
 
 ​:smile:   **这里很重要一点**
 
@@ -92,7 +92,7 @@ Object obj = constructor.newInstance("23333");
 System.out.println(obj);
 ```
 
-###在运行时判断任意一个类所具有的成员变量和方法
+### 在运行时判断任意一个类所具有的成员变量和方法
 
 获取某个Class对象的方法集合，主要有以下几个方法：
 getDeclaredMethods()方法返回类或接口声明的所有方法，包括公共、保护、默认（包）访问和私有方法，但不包括继承的方法。
@@ -120,7 +120,7 @@ Method[] declaredMethods = c.getDeclaredMethods();
 //获取methodClass类的add方法
 Method method = c.getMethod("add", int.class, int.class);
 ```
-###在运行时调用任意一个对象的方法
+### 在运行时调用任意一个对象的方法
 
 当我们从类中获取了一个方法后，我们就可以用invoke()方法来调用这个方法。invoke方法的原型为:
 
@@ -130,6 +130,6 @@ public Object invoke(Object obj, Object... args)
            InvocationTargetException
 ```
 
-
+### 总结
 ** 由于反射会额外消耗一定的系统资源，因此如果不需要动态地创建一个对象，那么就不需要用反射 ** <br>
 ** 另外，反射调用方法时可以忽略权限检查，因此可能会破坏封装性而导致安全问题 **
