@@ -4,7 +4,7 @@ title:      "读书笔记——垃圾收集器与内存分配策略"
 subtitle:   "Garbage collection"
 date:       2017-06-26 20:00:00
 author:     "Zhouxj"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/post-bg-javagc.jpg"
 catalog: true
 comments: true
 tags:

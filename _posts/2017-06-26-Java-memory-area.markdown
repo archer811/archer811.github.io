@@ -4,7 +4,7 @@ title:      "读书笔记——Java内存区域与内存溢出异常"
 subtitle:   "Java memory area"
 date:       2017-06-26 10:00:00
 author:     "Zhouxj"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/post-bg-memarea.jpg"
 catalog: true
 comments: true
 tags:
