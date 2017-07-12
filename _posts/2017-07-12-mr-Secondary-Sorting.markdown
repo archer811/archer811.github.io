@@ -79,7 +79,7 @@ public class WordCountReducer extends Reducer<Text, IntWritable, Text, IntWritab
 }
 ```
 刚开始的时候老是LongWritable,Text搞不清什么时候该用什么格式，老是碰到如下报错:
-<img src="//archer811.github.io/img/post-mrsort.png"  width="300" alt="sentry code"/>
+<img src="//archer811.github.io/img/post-mrsort.png"  width="650" alt="sentry code"/>
 后来发现原因和规律：
 因为我设置的job.setInputFormatClass(TextInputFormat.class)，Mapper<LongWritable, Text<LongWritable, Text,*,*>前两个类型是固定的。
 另外 代码里1处，2处分别和Mapper，Reducer的后两个参数一样。
