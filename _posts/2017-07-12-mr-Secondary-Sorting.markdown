@@ -138,6 +138,7 @@ public class WordCountReducer extends Reducer<Text, IntWritable, Text, IntWritab
 ### 二次排序实现方法二
 另外一种比较多的人采用的方法
 可以把两个值搭成一个组合，比较的时候同时比较两个数。
+在执行map的时候就排序组合，reduce的时候只是输出结果。
 封装一个自定义类型
 ```
 private static class MyNewKey implements WritableComparable<MyNewKey> {
