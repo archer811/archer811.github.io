@@ -86,7 +86,7 @@ public class WordCountReducer extends Reducer<Text, IntWritable, Text, IntWritab
 
 
 ### 一次map相当于一次排序
-怎么更好理解这句话，举另外一个例子：
+怎么更好理解这句话，举另外一个例子：<br>
 wordcount之后的数据：
 ```
 a    5
@@ -98,15 +98,15 @@ r    64
 f    4
 ```
 这时候要实现每个词出现的次数降序排列：
-1，先把每行的两个值换位置：
+1，先把每行的两个值换位置：<br>
 5 a<br>
 4 b<br>
 74 c<br>
-2，然后map后，hadoop会对结果进行分组
+2，然后map后，hadoop会对结果进行分组<br>
 (5：a)<br>
 (4:b,f)<br>
 (74:c)<br>
-3，因为hadoop对数据分组后默认是按照key升序排序的，每行两个值换回位置
+3，因为hadoop对数据分组后默认是按照key升序排序的，每行两个值换回位置<br>
 b 4<br>
 f 4<br>
 a 5<br>
@@ -136,9 +136,9 @@ public class WordCountReducer extends Reducer<Text, IntWritable, Text, IntWritab
 ```
 可行
 ### 二次排序实现方法二
-另外一种比较多的人采用的方法
-可以把两个值搭成一个组合，比较的时候同时比较两个数。
-在执行map的时候就排序组合，reduce的时候只是输出结果。
+另外一种比较多的人采用的方法<br>
+可以把两个值搭成一个组合，比较的时候同时比较两个数。<br>
+在执行map的时候就排序组合，reduce的时候只是输出结果。<br>
 封装一个自定义类型
 ```
 private static class MyNewKey implements WritableComparable<MyNewKey> {
