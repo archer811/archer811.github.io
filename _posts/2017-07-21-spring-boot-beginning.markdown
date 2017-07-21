@@ -13,7 +13,7 @@ tags:
 
 ### spring boot 快速入门案例
 网上随便找教程或者书，都有入门案例介绍：<br>
-[参考链接](http://blog.didispace.com/spring-boot-learning-1/)<br>
+
 1. 通过SPRING INITIALIZR工具产生基础项目<br>
   1) 访问：http://start.spring.io/<br>
   2) 选择构建工具Maven Project、Spring Boot版本以及一些工程基本信息<br>
@@ -23,7 +23,7 @@ tags:
 4. run主类，打开(http://localhost://8080)可以看到效果<br>
 `@SpringBootApplication` 主程序入口，直接启动当前项目<br>
 
-###合理的工程结构
+### 合理的工程结构
 [参考链接](http://blog.didispace.com/springbootproject/)<br>
 ```
 com
