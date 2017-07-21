@@ -13,7 +13,7 @@ tags:
 
 ### spring boot 快速入门案例
 网上随便找教程或者书，都有入门案例介绍：<br>
-
+[参考链接](http://blog.didispace.com/spring-boot-learning-1/)<br>
 1. 通过SPRING INITIALIZR工具产生基础项目<br>
   1) 访问：http://start.spring.io/<br>
   2) 选择构建工具Maven Project、Spring Boot版本以及一些工程基本信息<br>
@@ -21,7 +21,17 @@ tags:
 2. 解压项目包，并用IDE以Maven项目导入<br>
 3. 写一个Controller，要求和`@SpringBootApplication`的主类在相同的包或者同一个父包里<br>
 4. run主类，打开(http://localhost://8080)可以看到效果<br>
-`@SpringBootApplication` 主程序入口，直接启动当前项目<br>
+从案例，可以学到如下：<br>
+* 如果是maven项目，则包含pom.xml，如果是Gradle，build.gradle<br>
+pom.xml包含项目依赖，最基础的两个<br>
+```
+spring-boot-starter：核心模块，包括自动配置支持、日志和YAML
+spring-boot-starter-test：测试模块，包括JUnit、Hamcrest、Mockito
+```
+如果引入Web模块，需添加`spring-boot-starter-web`模块<br>
+* Application.java 带main() 方法的类，用于引导启动应用程序
+* ApplicationTests.java 一个空的Junit测试类，它加载了一个使用Spring Boot自动配置功能的Spring应用程序上下文
+* application.properties 根据需要添加配置属性
 
 ### 合理的工程结构
 [参考链接](http://blog.didispace.com/springbootproject/)<br>
