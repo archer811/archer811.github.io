@@ -22,8 +22,8 @@ tags:
 3. 写一个Controller，要求和`@SpringBootApplication`的主类在相同的包或者同一个父包里<br>
 4. run主类，打开(http://localhost://8080)可以看到效果<br>
 `@SpringBootApplication` 主程序入口，直接启动当前项目<br>
-<br>
-### 合理的工程结构
+
+###合理的工程结构
 [参考链接](http://blog.didispace.com/springbootproject/)<br>
 ```
 com
