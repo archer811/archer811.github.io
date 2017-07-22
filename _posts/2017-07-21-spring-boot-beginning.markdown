@@ -33,6 +33,25 @@ spring-boot-starter-test：测试模块，包括JUnit、Hamcrest、Mockito
 * ApplicationTests.java 一个空的Junit测试类，它加载了一个使用Spring Boot自动配置功能的Spring应用程序上下文
 * application.properties 根据需要添加配置属性
 
+
+### 碰到的报错
+尝试一个复杂一点的例子:[参考链接](http://blog.didispace.com/springbootrestfulapi/)
+我碰到几个报错，以后出现同样的问题就容易解决了
+* `Your ApplicationContext is unlikely to start due to a @ComponentScan of the default package.`<br>
+因为application.Java 文件不能直接放在main/java文件夹下，必须要建一个包把他放进去<br>
+* `Ambiguous mapping. Cannot map 'usersController' method`<br>
+因为userController下某两个方法的映射名相同,导致这个错误.<br>
+比如两个方法这样写<br>
+```
+@RequestMapping(value="/{id}", method = RequestMethod.GET)
+public User getUser(@PathVariable Long id) {
+    return  users.get(id);
+}
+@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+```
+他们都是 `/{id}`映射名<br>
+
+
 ### 合理的工程结构
 [参考链接](http://blog.didispace.com/springbootproject/)<br>
 ```
@@ -57,5 +76,10 @@ com
 * 逻辑层（Service）置于com.example.myproject.service包下
 * Web层（web）置于com.example.myproject.web包下
 
-### 配置
-未完待续
+### 配置（理论）
+某次肯定是有配置的，配置是Spring Framework的核心元素，必须要有东西告诉Spring如何运行应用程序。<br>
+在向应用程序加入Spring Boot的时候，有个名为spring-boot-autoconfigure的JAR文件，其中包含了很多配置类。每个配置类都应该在应用程序的Classpath里，<br>
+这些配置有用于Thymeleaf的配置，有用于SpringDataJPA的配置，有用于SpringMVC的配置，还有很多其他东西的配置，你可以自己选择是否在Spring应用程序里使用它们。<br>
+<br>
+条件化配置允许配置存在于应用程序中，但在满足某些特定条件之前都忽略这个配置<br>
+在Spring里可以很方便的编写你自己的条件，你所要做的就是实现Condition接口，覆盖它的matches()方法。
