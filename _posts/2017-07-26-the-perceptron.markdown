@@ -23,7 +23,7 @@ tags:
 
 ### 感知机学习策略
 损失函数：误分类点到超平面S的总距离。<br>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default">$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$</script>
+<img src="http://latex.codecogs.com/svg.latex?x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" style="border:none;">
 
   <br>
  $$\begin{equation*}L(w,b) = - \sum\limits_{x_i\in{M}}y_i(w*x_i+b)\end{equation*}$$
