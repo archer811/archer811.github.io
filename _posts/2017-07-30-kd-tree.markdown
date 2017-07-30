@@ -1,0 +1,32 @@
+---
+layout: post
+title:      "k近邻法"
+subtitle:   "top k nearest neighbor method"
+date:       2017-07-30 12:00:00
+author:     "Zhouxj"
+header-img: "img/post-bg-kdtree.jpg"
+catalog: true
+comments: true
+tags:
+    - 统计学习方法
+---
+
+> 《统计学习方法》 第三章
+
+### k近邻法概念
+假设给定一个训练数据集，其中的实例类别已定。分类时，对新的实例，根据其k个最近邻的训练实例的类别，通过多数表决等方式进行预测。<br>
+k近邻法不具有显式的学习过程。<br>
+
+### 三个基本要素
+#### k值得选择
+k值得选择会对k近邻法的结果产生重大影响。<br>
+如果选择较小的k值，就相当于用较小的邻域中的训练实例进行预测。“学习”的近似误差会减少，只有与输入实例较近的训练实例才会对预测结果起作用。但缺点是“学习”的估计误差会增大，预测结果会对近邻的实例点非常敏感。
+如果选择较大的k值，就相当于较大邻域中的训练实例进行预测。其优点是可以减少学习的计算误差。但缺点是学习的近似误差会增大。
+#### 距离度量
+距离度量公式如下<br>
+<img src="//archer811.github.io/img/kdtree-1.png"  width="680" alt="Minkowski距离"/>
+#### 分类决策
+多数表决。在训练集找到与该实例最邻近的k个实例，这k个实例的多数属于某个类，就把该输入实例分为这个类。
+
+### kd树
+[代码](https://github.com/archer811/MachineLearning/blob/master/kdTree/KDTree.java)
