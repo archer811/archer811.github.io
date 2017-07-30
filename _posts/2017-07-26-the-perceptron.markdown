@@ -23,16 +23,8 @@ tags:
 
 ### 感知机学习策略
 损失函数：误分类点到超平面S的总距离。<br>
-```
- \left[
- \begin{matrix}
-   a & 0\\
-   1 & 1\\
-   2 & 3
-  \end{matrix}
-  \right]
-  \tag{tag}
-  ```
+<img src="http://chart.googleapis.com/chart?cht=tx&chl=\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" style="border:none;">
+
   <br>
  \begin{equation*}L(w,b) = - \sum\limits_{x_i\in{M}}y_i(w*x_i+b)\end{equation*}
 ### 感知机学习算法实现
