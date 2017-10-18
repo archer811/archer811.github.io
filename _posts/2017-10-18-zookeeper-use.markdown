@@ -8,7 +8,7 @@ header-img: "img/post-bg-zookeeper.jpg"
 catalog: true
 comments: true
 tags:
-    - scala
+    - Zookeeper
 ---
 
 ### ZooKeeper服务命令
