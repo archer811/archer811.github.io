@@ -4,7 +4,7 @@ title:      "Zookeeper的常用命令及javaApi的使用"
 subtitle:   "Zookeeper commands and the use of javaApi"
 date:       2017-10-18 12:00:00
 author:     "Zhouxj"
-header-img: "img/post-bg-zookeeper.jpeg"
+header-img: "img/post-bg-zookeeper.jpg"
 catalog: true
 comments: true
 tags:
