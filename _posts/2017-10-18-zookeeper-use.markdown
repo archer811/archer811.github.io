@@ -70,5 +70,6 @@ zk.delete(path);
 zk.getChildren(path);
 ```
 上面两种方式，都会有 如果zookeeper路径存在，就报“ZkNodeExistsException”溢出，然后结束程序。
-###可以用Zookeeper实现的功能
+
+### 可以用Zookeeper实现的功能
 分布式系统中服务的注册与发现
