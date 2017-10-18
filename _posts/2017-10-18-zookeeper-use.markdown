@@ -73,3 +73,7 @@ zk.getChildren(path);
 
 ### 可以用Zookeeper实现的功能
 分布式系统中服务的注册与发现
+
+### 参考
+`http://blog.csdn.net/u012562943/article/details/52963506`<br>
+`http://blog.csdn.net/xiaolang85/article/details/13021339`
