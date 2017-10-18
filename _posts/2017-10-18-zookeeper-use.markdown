@@ -13,10 +13,10 @@ tags:
 
 ### ZooKeeper服务命令
 
-1. 启动ZK服务:       sh bin/zkServer.sh start
-2. 查看ZK服务状态: sh bin/zkServer.sh status
-3. 停止ZK服务:       sh bin/zkServer.sh stop
-4. 重启ZK服务:       sh bin/zkServer.sh restart
+1. 启动ZK服务:`sh bin/zkServer.sh start`
+2. 查看ZK服务状态:`sh bin/zkServer.sh status`
+3. 停止ZK服务:`sh bin/zkServer.sh stop`
+4. 重启ZK服务:`sh bin/zkServer.sh restart`
 
 ### zk客户端命令
 
@@ -36,7 +36,6 @@ tags:
 ### JavaAPI
 
 #### 添加依赖
-
 ```
 <dependency>
     <groupId>org.apache.zookeeper</groupId>
