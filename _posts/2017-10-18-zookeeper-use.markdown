@@ -12,13 +12,18 @@ tags:
 ---
 
 ### ZooKeeper服务命令
+
 1. 启动ZK服务:       sh bin/zkServer.sh start
 2. 查看ZK服务状态: sh bin/zkServer.sh status
 3. 停止ZK服务:       sh bin/zkServer.sh stop
 4. 重启ZK服务:       sh bin/zkServer.sh restart
+
 ### zk客户端命令
+
 使用 zkCli.sh -server 127.0.0.1:2181 连接到 ZooKeeper 服务，连接成功后，系统会输出 ZooKeeper 的相关环境以及配置信息。
+
 ### 命令行工具
+
 1. 显示根目录下、文件： ls / 使用 ls 命令来查看当前 ZooKeeper 中所包含的内容
 2. 显示根目录下、文件： ls2 / 查看当前节点数据并能看到更新次数等数据
 3. 创建文件，并设置初始内容： create /zk "test" 创建一个新的 znode节点“ zk ”以及与它关联的字符串
@@ -27,8 +32,11 @@ tags:
 6. 删除文件： delete /zk 将刚才创建的 znode 删除
 7. 退出客户端： quit
 8. 帮助命令： help
+
 ### JavaAPI
+
 #### 添加依赖
+
 ```
 <dependency>
     <groupId>org.apache.zookeeper</groupId>
