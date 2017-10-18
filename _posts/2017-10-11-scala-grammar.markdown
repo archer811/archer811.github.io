@@ -120,9 +120,9 @@ def packageFood[T: Manifest] (food: T*) = {
 2. 定义隐式转换函数，只要在编写的程序内引入，就会被Scala自动使用。Scala会根据隐式转换函数的签名，在程序中使用到隐式转换函数接收的参数类型定义的对象时，会自动将其传入隐式转换函数
 3. 命名通常`"one2one"`
 #### 隐式函数
-唯一的语法区别就是，要以implicit开头，而且最好要定义函数返回类型
+唯一的语法区别就是，要以implicit开头，而且最好要定义函数返回类型<br>
 #### 隐式参数
-1. 所谓的隐式参数，指的是在函数或者方法中，定义一个用implicit修饰的参数（比如，implicit signPen: SignPen），此时Scala会尝试找到一个指定类型的，用implicit修饰的对象（比如implicit val signPen = new SignPen），即隐式值，并注入参数。
+1. 所谓的隐式参数，指的是在函数或者方法中，定义一个用`implicit`修饰的参数`（比如，implicit signPen: SignPen）`，此时Scala会尝试找到一个指定类型的，用`implicit`修饰的对象`（比如implicit val signPen = new SignPen）`，即隐式值，并注入参数。
 2. Scala会在两个范围内查找：一种是当前作用域内可见的val或var定义的隐式变量；一种是隐式参数类型的伴生对象内的隐式值
 ```
 class SignPen {
@@ -135,8 +135,8 @@ def signForExam(name: String) (implicit signPen: SignPen) {
 }
 ```
 #### 隐式转换函数的作用域与导入
-1. Scala默认会使用两种隐式转换，一种是源类型，或者目标类型的伴生对象内的隐式转换函数；一种是当前程序作用域内的可以用唯一标识符表示的隐式转换函数
-2. 如果隐式转换函数不在上述两种情况下的话，那么就必须手动使用import语法引入某个包下的隐式转换函数。
+1. Scala默认会使用两种隐式转换，一种是源类型，或者目标类型的伴生对象内的隐式转换函数；一种是当前程序作用域内的可以用唯一标识符表示的隐式转换函数<br>
+2. 如果隐式转换函数不在上述两种情况下的话，那么就必须手动使用import语法引入某个包下的隐式转换函数。<br>
 #### 隐式转换的发生时机
 1. 调用某个函数，但是给函数传入的参数的类型，与函数定义的接收参数类型不匹配
 ```
@@ -177,7 +177,7 @@ class TicketHouse {
 ### 模式匹配
 #### 基础语法
 1. 匹配变量的值
-2. match case的语法如下：变量 match { case 值 => 代码 }。如果值为下划线，则代表了不满足以上所有情况下的默认情况如何处理。此外，match case中，只要一个case分支满足并处理了，就不会继续判断下一个case分支了
+2. `match case`的语法如下：变量 `match { case 值 => 代码 }`。如果值为下划线，则代表了不满足以上所有情况下的默认情况如何处理。此外，`match case`中，只要一个case分支满足并处理了，就不会继续判断下一个case分支了<br>
 ```
 def judge(id:Int) = {
   id match {
@@ -206,7 +206,7 @@ def judge(name:String, id:Int) = {
 }
 ```
 #### 对类型进行模式匹配
-其他语法与匹配值其实是一样的，但是匹配类型的话，就是要用“case 变量: 类型 => 代码”这种语法，而不是匹配值的“case 值 => 代码”这种语法
+其他语法与匹配值其实是一样的，但是匹配类型的话，就是要用`“case 变量: 类型 => 代码”`这种语法，而不是匹配值的`“case 值 => 代码”`这种语法
 #### 对Array和List的元素进行模式匹配
 1. 对Array进行模式匹配，分别可以匹配带有指定元素的数组、带有指定个数元素的数组、以某元素打头的数组
 2. 对List进行模式匹配，与Array类似，但是需要使用List特有的::操作符
@@ -229,9 +229,9 @@ def greeting(list: List[String]) {
 }
 ```
 #### case class
-1. Scala中提供了一种特殊的类，用case class进行声明。case class其实有点类似于Java中的JavaBean的概念。即只定义field，并且由Scala编译时自动提供getter和setter方法，但是没有method。
-2. case class的主构造函数接收的参数通常不需要使用var或val修饰，Scala自动就会使用val修饰（但是如果你自己使用var修饰，那么还是会按照var来）
-3. Scala自动为case class定义了伴生对象，也就是object，并且定义了apply()方法，该方法接收主构造函数中相同的参数，并返回case class对象
+1. Scala中提供了一种特殊的类，用`case class`进行声明。`case class`其实有点类似于Java中的JavaBean的概念。即只定义field，并且由Scala编译时自动提供`getter和setter`方法，但是没有method。
+2. `case class`的主构造函数接收的参数通常不需要使用var或val修饰，Scala自动就会使用val修饰（但是如果你自己使用var修饰，那么还是会按照var来）
+3. Scala自动为`case class`定义了伴生对象，也就是object，并且定义了`apply()`方法，该方法接收主构造函数中相同的参数，并返回`case class`对象
 ```
 class Person
 case class Teacher(name: String, subject: String) extends Person
